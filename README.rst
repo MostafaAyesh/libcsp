@@ -38,11 +38,3 @@ Features
 LGPL Software license
 ---------------------
 The source code is available under an LGPL 2.1 license. See COPYING for the license text.
-
-
-Continous Integration using Travis CI
-=====================================
-
-Master: [![Build Status](https://travis-ci.com/libcsp/libcsp.svg?branch=master)](https://travis-ci.com/libcsp/libcsp)
-
-Develop: [![Build Status](https://travis-ci.com/libcsp/libcsp.svg?branch=develop-travis)](https://travis-ci.com/libcsp/libcsp)
