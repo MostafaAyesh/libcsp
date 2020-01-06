@@ -10,3 +10,5 @@ jobs:
       script: python examples/buildall.py
     - os: osx
       script: python examples/buildall.py --with-os=macosx
+    - os: windows
+      script: python examples/buildall.py --with-os=windows
