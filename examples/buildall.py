@@ -20,10 +20,10 @@ options = [
 ]
 
 linux_options = [
-    '--enable-bindings',
+    # '--enable-bindings',
     '--enable-python3-bindings',
     # '--enable-can-socketcan',
-    '--with-driver-usart=linux',
+    # '--with-driver-usart=linux',
     '--with-os=posix',
     # '--enable-if-zmqhub'
 ]
