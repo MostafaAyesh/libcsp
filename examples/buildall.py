@@ -12,18 +12,18 @@ options = [
     '--enable-hmac',
     '--enable-xtea',
     '--enable-dedup',
-    '--enable-if-i2c',
-    '--enable-if-kiss',
-    '--enable-if-can',
+    # '--enable-if-i2c',
+    # '--enable-if-kiss',
+    # '--enable-if-can',
 ]
 
 linux_options = [
     '--enable-bindings',
     '--enable-python3-bindings',
-    '--enable-can-socketcan',
+    # '--enable-can-socketcan',
     '--with-driver-usart=linux',
     '--with-os=posix',
-    '--enable-if-zmqhub'
+    # '--enable-if-zmqhub'
 ]
 
 # Build on linux
