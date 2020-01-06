@@ -11,7 +11,5 @@ jobs:
     - os: osx
       script: python examples/buildall.py --with-os=macosx
     - os: windows
-      before_install:
-      - choco install python3
-      - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
+      python: 2.7
       script: python examples/buildall.py --with-os=windows
