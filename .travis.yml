@@ -1,6 +1,6 @@
 # Travis CI
 
-branches: [develop-travis] 
+branches: [develop-travis]
 language: c
 compiler: gcc
 
@@ -9,4 +9,4 @@ jobs:
     - os: linux
       script: python examples/buildall.py
     - os: osx
-      script: python examples/buildall.py
+      script: python examples/buildall.py --with-os=macosx

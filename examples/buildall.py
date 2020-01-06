@@ -2,7 +2,9 @@
 # encoding: utf-8
 
 import subprocess
+import sys
 
+cmd_options = sys.argv[1:]
 
 options = [
     '--enable-rdp',
@@ -26,8 +28,8 @@ linux_options = [
     # '--enable-if-zmqhub'
 ]
 
-# Build on linux
-subprocess.check_call(['./waf', 'distclean', 'configure', 'build'] + options + linux_options +
+# Build
+subprocess.check_call(['./waf', 'distclean', 'configure', 'build'] + options + linux_options + cmd_options +
                       ['--enable-init-shutdown', '--with-rtable=cidr', '--disable-stlib', '--disable-output'])
-subprocess.check_call(['./waf', 'distclean', 'configure', 'build'] + options + linux_options +
+subprocess.check_call(['./waf', 'distclean', 'configure', 'build'] + options + linux_options + cmd_options +
                       ['--enable-examples'])
