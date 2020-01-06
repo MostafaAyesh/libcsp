@@ -2,11 +2,11 @@
 
 branches: [develop-travis] 
 language: c
+compiler: gcc
 
 jobs:
   include:
     - os: linux
-      stage: test
-      script: examples/buildall.py
+      script: python examples/buildall.py
     - os: osx
-      script: examples/buildall.py
+      script: python examples/buildall.py
