@@ -65,7 +65,7 @@ typedef struct csp_iface_s {
        uint32_t rxbytes;                       /**< Received bytes */
        uint32_t irq;                           /**< Interrupts */
        struct csp_iface_s *next;       /**< Next interface */
-} csp_iface_t;
+};
     
 /**
    Inputs a new packet into the system.

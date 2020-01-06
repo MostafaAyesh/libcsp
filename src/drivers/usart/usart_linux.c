@@ -181,7 +181,8 @@ void usart_init(struct usart_conf * conf) {
 #endif
     default:
       printf("Unsupported baudrate requested, defaulting to 500000, requested baudrate=%u\n", conf->baudrate);
-      brate=B500000;
+      // TODO brate=B500000;
+      brate = B230400;
       break;
     }
 
