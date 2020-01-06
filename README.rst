@@ -44,4 +44,5 @@ Continous Integration using Travis CI
 =====================================
 
 Master: [![Build Status](https://travis-ci.com/libcsp/libcsp.svg?branch=master)](https://travis-ci.com/libcsp/libcsp)
+
 Develop: [![Build Status](https://travis-ci.com/libcsp/libcsp.svg?branch=develop-travis)](https://travis-ci.com/libcsp/libcsp)
