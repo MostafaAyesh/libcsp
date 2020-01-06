@@ -14,4 +14,6 @@ jobs:
       before_install:
         - choco install python --version 3.8.0
         - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+	- ls /c/Python38
+	- echo $PATH
       script: python3 examples/buildall.py --with-os=windows
