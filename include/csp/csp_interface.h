@@ -48,7 +48,7 @@ extern "C" {
 typedef int (*nexthop_t)(struct csp_iface_s * iface, csp_packet_t *packet, uint32_t timeout);
 
 /** Interface struct */
-typedef struct csp_iface_s {
+struct csp_iface_s {
        const char *name;                       /**< Interface name (keep below 10 bytes) */
        void * driver;                          /**< Pointer to interface handler structure */
        nexthop_t nexthop;                      /**< Next hop function */
