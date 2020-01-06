@@ -10,7 +10,8 @@ jobs:
       script: python examples/buildall.py
     - os: osx
       script: python examples/buildall.py --with-os=macosx
-    - os: windows
+    - name: Windows
+      os: windows
       before_install:
         - choco install python --version 3.8.0
         - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
