@@ -4,9 +4,15 @@
 import subprocess
 import sys
 
-cmd_options = sys.argv[1:]
+os = 'posix'  ## default OS
+options = sys.argv[1:]
 
-options = [
+if (len(options) > 0) and not options[0].startswith('--'):
+    os = options[0]
+    options = options[1:]
+
+options += [
+    '--with-os=' + os,
     '--enable-rdp',
     '--enable-qos',
     '--enable-promisc',
@@ -19,17 +25,19 @@ options = [
     # '--enable-if-can',
 ]
 
-linux_options = [
-    # '--enable-bindings',
-    '--enable-python3-bindings',
-    # '--enable-can-socketcan',
-    # '--with-driver-usart=linux',
-    '--with-os=posix',
-    # '--enable-if-zmqhub'
-]
+if os in ['posix']:
+    options += [
+        # '--enable-bindings',
+        '--enable-python3-bindings',
+        # '--enable-can-socketcan',
+        # '--with-driver-usart=linux',
+        # '--enable-if-zmqhub'
+    ]
+
+waf = ('./' if os != 'windows' else '') + 'waf'
 
 # Build
-subprocess.check_call(['./waf', 'distclean', 'configure', 'build'] + options + linux_options + cmd_options +
+subprocess.check_call([waf, 'distclean', 'configure', 'build'] + options +
                       ['--enable-init-shutdown', '--with-rtable=cidr', '--disable-stlib', '--disable-output'])
-subprocess.check_call(['./waf', 'distclean', 'configure', 'build'] + options + linux_options + cmd_options +
+subprocess.check_call([waf, 'distclean', 'configure', 'build'] + options +
                       ['--enable-examples'])
