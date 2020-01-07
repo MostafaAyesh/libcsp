@@ -27,8 +27,8 @@ VERSION = '1.6'
 
 def options(ctx):
     # Load GCC options
-    ctx.load('gcc')
-    # ctx.load('compiler_c')
+    # ctx.load('gcc')
+    ctx.load('compiler_c')
     
     ctx.add_option('--toolchain', default=None, help='Set toolchain prefix')
 
@@ -89,8 +89,8 @@ def configure(ctx):
         ctx.env.CC = ctx.options.toolchain + 'gcc'
         ctx.env.AR = ctx.options.toolchain + 'ar'
 
-    ctx.load('gcc')
-    # ctx.load('compiler_c')
+    # ctx.load('gcc')
+    ctx.load('compiler_c')
 
     # Set git revision define
     git_rev = os.popen('git describe --always 2> /dev/null || echo unknown').read().strip()

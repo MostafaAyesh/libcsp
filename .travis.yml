@@ -10,7 +10,7 @@ jobs:
       script: python examples/buildall.py
     - os: osx
       compiler: gcc
-      script: python examples/buildall.py macosx CC=gcc48
+      script: python examples/buildall.py macosx
     - os: windows
       compiler: gcc
       before_install:
