@@ -34,10 +34,11 @@ if os in ['posix']:
         # '--enable-if-zmqhub'
     ]
 
-waf = ('./' if os != 'windows' else '') + 'waf'
+waf = [('./' if os != 'windows' else '') + 'waf', 'distclean', 'configure', 'build']
+print("Waf build commands:", waf)
 
 # Build
-subprocess.check_call([waf, 'distclean', 'configure', 'build'] + options +
+subprocess.check_call(waf + options +
                       ['--enable-init-shutdown', '--with-rtable=cidr', '--disable-stlib', '--disable-output'])
-subprocess.check_call([waf, 'distclean', 'configure', 'build'] + options +
+subprocess.check_call(waf + options +
                       ['--enable-examples'])
