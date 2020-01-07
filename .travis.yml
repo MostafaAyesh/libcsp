@@ -1,4 +1,4 @@
-1# Travis CI
+# Travis CI
 
 branches: [develop-travis]
 language: c
