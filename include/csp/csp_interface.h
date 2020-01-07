@@ -82,7 +82,7 @@ struct csp_iface_s {
    @param[in] interface A pointer to the incoming interface TX function.
    @param[out] pxTaskWoken Valid reference if called from ISR, otherwise NULL!
 */
-void csp_qfifo_write(csp_packet_t *packet, csp_iface_t *interface, CSP_BASE_TYPE *pxTaskWoken);
+void csp_qfifo_write(csp_packet_t *packet, csp_iface_t *iface, CSP_BASE_TYPE *pxTaskWoken);
 
 #ifdef __cplusplus
 }
