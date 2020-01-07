@@ -20,7 +20,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "csp_rtable_internal.h"
 
-#include <alloca.h>
 #include <stdio.h>
 
 #include <csp/csp.h>
