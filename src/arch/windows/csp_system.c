@@ -18,25 +18,24 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include <stdint.h>
+#include <csp/arch/csp_system.h>
+
 #include <string.h>
 #include <Windows.h>
 
-#include <csp/csp.h>
-#include <csp/csp_error.h>
-
-#include <csp/arch/csp_system.h>
-
 int csp_sys_tasklist(char * out) {
+
 	strcpy(out, "Tasklist not available on Windows");
 	return CSP_ERR_NONE;
 }
 
 int csp_sys_tasklist_size(void) {
+
         return 100;
 }
 
 uint32_t csp_sys_memfree(void) {
+
 	MEMORYSTATUSEX statex;
 	statex.dwLength = sizeof(statex);
 	GlobalMemoryStatusEx(&statex);
@@ -46,11 +45,13 @@ uint32_t csp_sys_memfree(void) {
 }
 
 int csp_sys_reboot(void) {
+
 	csp_log_error("%s: not supported", __FUNCTION__);
 	return CSP_ERR_NOTSUP;
 }
 
 int csp_sys_shutdown(void) {
+
 	csp_log_error("%s: not supported", __FUNCTION__);
 	return CSP_ERR_NOTSUP;
 }

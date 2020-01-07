@@ -28,28 +28,28 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #include <sys/ioctl.h>
 #include <net/if.h>
 #include <linux/can/raw.h>
-#ifdef CSP_HAVE_LIBSOCKETCAN
+#if (CSP_HAVE_LIBSOCKETCAN)
 #include <libsocketcan.h>
 #endif
 
 #include <csp/csp.h>
 
+// CAN interface data, state, etc.
 typedef struct {
-    char name[CSP_IFLIST_NAME_MAX + 1];
-    csp_iface_t iface;
-    csp_can_interface_data_t ifdata;
-    pthread_t rx_thread;
+	char name[CSP_IFLIST_NAME_MAX + 1];
+	csp_iface_t iface;
+	csp_can_interface_data_t ifdata;
+	pthread_t rx_thread;
 	int socket;
 } can_context_t;
 
-static void socketcan_free(can_context_t * ctx)
-	{
-    if (ctx) {
-        if (ctx->socket >= 0) {
-            close(ctx->socket);
-        }
-        free(ctx);
-    }
+static void socketcan_free(can_context_t * ctx) {
+	if (ctx) {
+		if (ctx->socket >= 0) {
+			close(ctx->socket);
+		}
+		free(ctx);
+	}
 }
 
 static void * socketcan_rx_thread(void * arg)
@@ -75,7 +75,7 @@ static void * socketcan_rx_thread(void * arg)
 			continue;
 		}
 
-			/* Drop error and remote frames */
+		/* Drop error and remote frames */
 		if (frame.can_id & (CAN_ERR_FLAG | CAN_RTR_FLAG)) {
 			csp_log_warn("%s[%s]: discarding ERR/RTR/SFF frame", __FUNCTION__, ctx->name);
 			continue;
@@ -123,7 +123,7 @@ int csp_can_socketcan_open_and_add_interface(const char * device, const char * i
 	csp_log_info("%s: device: [%s], interface: [%s], bitrate: %d, promisc: %d",
 			__FUNCTION__, device, ifname, bitrate, promisc);
 
-#ifdef CSP_HAVE_LIBSOCKETCAN
+#if (CSP_HAVE_LIBSOCKETCAN)
 	/* Set interface up - this may require increased OS privileges */
 	if (bitrate > 0) {
 		can_do_stop(device);

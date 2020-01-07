@@ -203,7 +203,7 @@ int csp_route_work(uint32_t timeout) {
 		const csp_rtable_route_t * ifroute = csp_rtable_find_route(packet->id.dst);
 
 		/* If the message resolves to the input interface, don't loop it back out */
-		if ((ifroute == NULL) || ((ifroute->interface == input.interface) && (input.interface->split_horizon_off == 0))) {
+		if ((ifroute == NULL) || ((ifroute->iface == input.interface) && (input.interface->split_horizon_off == 0))) {
 			csp_buffer_free(packet);
 			return CSP_ERR_NONE;
 		}
