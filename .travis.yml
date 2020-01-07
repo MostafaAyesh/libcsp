@@ -7,6 +7,8 @@ jobs:
   include:
     - name: Linux Ubuntu, GCC
       os: linux
+      before_install:
+        - sudo apt-get -y install libzmq3-dev libsocketcan-dev libsocketcan2
       script: python examples/buildall.py
     - name: Mac OS, GCC
       os: osx
