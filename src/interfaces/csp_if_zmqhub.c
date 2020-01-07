@@ -51,7 +51,7 @@ typedef struct {
  */
 int csp_zmqhub_tx(const csp_rtable_route_t * route, csp_packet_t * packet, uint32_t timeout) {
 
-	zmq_driver_t * drv = route->interface->driver_data;
+	zmq_driver_t * drv = route->iface->driver_data;
 
 	const uint8_t dest = (route->mac != CSP_NODE_MAC) ? route->mac : packet->id.dst;
 

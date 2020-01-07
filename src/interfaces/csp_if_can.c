@@ -183,7 +183,7 @@ int csp_can_rx(csp_iface_t *interface, uint32_t id, const uint8_t *data, uint8_t
 
 int csp_can_tx(const csp_rtable_route_t * ifroute, csp_packet_t *packet, uint32_t timeout)
 {
-        csp_iface_t * iface = ifroute->interface;
+        csp_iface_t * iface = ifroute->iface;
         csp_can_interface_data_t * ifdata = iface->interface_data;
 
 	/* Get an unique CFP id - this should be locked to prevent access from multiple tasks */
