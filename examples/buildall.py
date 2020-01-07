@@ -36,6 +36,7 @@ if os in ['posix']:
 
 if os in ['macosx']:
     options += [
+        '--with-driver-usart=linux',
     ]
 
 if os in ['windows']:
