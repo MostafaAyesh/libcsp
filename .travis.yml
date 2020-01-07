@@ -17,4 +17,4 @@ jobs:
         - choco install python --version 3.8.0
         - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
         - python --version
-      script: python examples/buildall.py windows --check-c-compiler=gcc
+      script: python examples/buildall.py windows --check-c-compiler=gcc CC=gcc.exe -v
