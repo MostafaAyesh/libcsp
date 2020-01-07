@@ -44,7 +44,7 @@ void windows_queue_delete(windows_queue_t * q) {
 	free(q);
 }
 
-int windows_queue_enqueue(windows_queue_t * queue, void * value, int timeout) {
+int windows_queue_enqueue(windows_queue_t * queue, const void * value, int timeout) {
 	int offset;
 	EnterCriticalSection(&(queue->mutex));
 	while(queueFull(queue)) {

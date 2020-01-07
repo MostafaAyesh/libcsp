@@ -29,7 +29,7 @@ typedef struct windows_queue_s {
 
 windows_queue_t * windows_queue_create(int length, size_t item_size);
 void windows_queue_delete(windows_queue_t * q);
-int windows_queue_enqueue(windows_queue_t * queue, void * value, int timeout);
+int windows_queue_enqueue(windows_queue_t * queue, const void * value, int timeout);
 int windows_queue_dequeue(windows_queue_t * queue, void * buf, int timeout);
 int windows_queue_items(windows_queue_t * queue);
 
