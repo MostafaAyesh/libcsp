@@ -33,9 +33,16 @@ if os in ['posix']:
         # '--with-driver-usart=linux',
         # '--enable-if-zmqhub'
     ]
+    waf = ['./waf']
 
-waf = [('./' if os != 'windows' else '') + 'waf', 'distclean', 'configure', 'build']
-print("Waf build commands:", waf)
+if os in ['macosx']:
+    waf = ['./waf']
+
+if os in ['windows']:
+    waf = ['python', '-x', 'waf']
+
+waf += ['distclean', 'configure', 'build']
+print("Waf build command:", waf)
 
 # Build
 subprocess.check_call(waf + options +
