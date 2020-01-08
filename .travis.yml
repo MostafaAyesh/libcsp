@@ -5,8 +5,16 @@ language: c
 
 jobs:
   include:
-    - name: Linux Ubuntu, GCC
+    - name: Linux Ubuntu 18.04, GCC
       os: linux
+      dist: bionic
+      before_install:
+        - sudo apt-get -y install libzmq3-dev libsocketcan-dev libsocketcan2
+      script: python examples/buildall.py
+
+    - name: Linux Ubuntu 16.04, GCC
+      os: linux
+      dist: xenial
       before_install:
         - sudo apt-get -y install libzmq3-dev libsocketcan-dev libsocketcan2
       script: python examples/buildall.py
