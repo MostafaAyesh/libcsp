@@ -10,9 +10,22 @@ jobs:
       before_install:
         - sudo apt-get -y install libzmq3-dev libsocketcan-dev libsocketcan2
       script: python examples/buildall.py
-    - name: Mac OS, GCC
+
+    - name: Mac OS, XCode 11.3, GCC
       os: osx
+      osx_image: xcode11.3
       script: python examples/buildall.py macosx
+
+    - name: Mac OS, XCode 10.3, GCC
+      os: osx
+      osx_image: xcode10.3
+      script: python examples/buildall.py macosx
+
+    - name: Mac OS, XCode 9.4.1, GCC
+      os: osx
+      osx_image: xcode9.4.1
+      script: python examples/buildall.py macosx
+
     - name: Windows 10, MinGW GCC
       os: windows
       before_install:
