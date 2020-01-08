@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #include "windows_queue.h"
-#include "windows_glue.h"
+// TODO #include "windows_glue.h"
 
 struct windows_queue_s {
     void * buffer;
