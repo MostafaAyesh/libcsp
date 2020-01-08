@@ -177,7 +177,6 @@ int usart_open(const usart_conf_t *conf, usart_callback_t rx_callback, void * us
 		case 57600:   brate=B57600;   break;
 		case 115200:  brate=B115200;  break;
 		case 230400:  brate=B230400;  break;
-#if (CSP_MACOSX == 0)
 		case 460800:  brate=B460800;  break;
 		case 500000:  brate=B500000;  break;
 		case 576000:  brate=B576000;  break;
@@ -190,7 +189,6 @@ int usart_open(const usart_conf_t *conf, usart_callback_t rx_callback, void * us
 		case 3000000: brate=B3000000; break;
 		case 3500000: brate=B3500000; break;
 		case 4000000: brate=B4000000; break;
-#endif
 		default:
 			csp_log_error("%s: Unsupported baudrate: %u", __FUNCTION__, conf->baudrate);
 			return CSP_ERR_INVAL;
