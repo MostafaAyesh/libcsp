@@ -1,0 +1,39 @@
+// CSP Version
+#cmakedefine LIBCSP_VERSION @LIBCSP_VERSION@
+#cmakedefine GIT_REV @GIT_REV@
+
+#cmakedefine CSP_DEBUG
+
+#cmakedefine CSP_POSIX
+#cmakedefine CSP_FREERTOS
+#cmakedefine CSP_WINDOWS
+#cmakedefine CSP_MACOSX
+
+#cmakedefine CSP_DEBUG
+#cmakedefine CSP_USE_RDP
+#cmakedefine CSP_USE_CRC32
+#cmakedefine CSP_USE_HMAC
+#cmakedefine CSP_USE_XTEA
+#cmakedefine CSP_USE_PROMISC
+#cmakedefine CSP_USE_QOS
+#cmakedefine CSP_USE_DEDUP
+#cmakedefine CSP_USE_INIT_SHUTDOWN
+
+#cmakedefine CSP_CONN_MAX @CSP_CONN_MAX@
+#cmakedefine CSP_CONN_QUEUE_LENGTH @CSP_CONN_QUEUE_LENGTH@
+#cmakedefine CSP_FIFO_INPUT @CSP_FIFO_INPUT@
+#cmakedefine CSP_MAX_BIND_PORT @CSP_MAX_BIND_PORT@
+#cmakedefine CSP_RDP_MAX_WINDOW @CSP_RDP_MAX_WINDOW@
+#cmakedefine CSP_PADDING_BYTES @CSP_PADDING_BYTES@
+#cmakedefine CSP_CONNECTION_SO @CSP_CONNECTION_SO@
+#cmakedefine CSP_BUFFER_ALIGN @CSP_BUFFER_ALIGN@
+
+// Logging Levels
+#cmakedefine CSP_LOG_LEVEL_DEBUG
+#cmakedefine CSP_LOG_LEVEL_INFO
+#cmakedefine CSP_LOG_LEVEL_WARN
+#cmakedefine CSP_LOG_LEVEL_ERROR
+
+// Endianness
+#cmakedefine CSP_LITTLE_ENDIAN
+#cmakedefine CSP_BIG_ENDIAN
